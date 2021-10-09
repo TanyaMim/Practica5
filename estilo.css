@@ -1,0 +1,133 @@
+
+* { /* significa "todos los elementos" haciendo que de vean igual en todos los navegadores*/
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;  
+}
+
+html{ /*para que ocupe toda las secciones ocupen toda la pantalla */
+    height: 100%;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    min-height: 100%;
+}
+
+
+
+.g-c > * { /* Se configuran las secciones*/
+    padding: 5px;
+    
+}
+
+.header {
+    grid-area: header;
+    background-color: white;
+    position:relative;
+    
+}
+
+.m2{
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.m2 >a{
+    color: black;
+    font-size: 20px;
+}
+
+.m2 >a:hover {
+    color: #008e5a;
+}
+
+
+.sidebar {
+    grid-area: sidebar;
+    background-color:white;
+    font-size: 20px;
+}
+
+.main {
+    grid-area: main;
+    background-color: white;
+}
+
+.section { 
+    grid-area: section;
+    background-color: black;
+    color: white;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: darkgray;
+}
+
+.g-c { /*Se establecen cada uno de las secciones*/
+    display: grid;
+    gap: 10px; /*Separación entre los elementos*/
+    grid-template: 
+    "header"
+    "sidebar"
+    "main"
+    "section"
+    "footer";
+}
+
+@media (min-width: 600px) { /*Configuración para una pantalla de 600 px o mas*/
+    .g-c {
+        grid-template: /*Se configura la posición de las columnas*/
+        "header  header header" 100px/*tamaño de las filas*/
+        "sidebar main section" auto
+        "footer  footer footer" 100px /
+        150px 1000px 200px /*tamaño de las columnas*/ ;
+        
+    }
+}
+
+.m-v { /*menu*/
+	list-style: none;
+	position:absolute;
+	z-index:999;
+}
+
+.m-v  a {
+    background: #008e5a;
+	border-radius: 10px 10px 10px 10px;
+	color: black;
+	font-weight:bold;
+	margin: 4px;
+	display: block;
+	padding: 3px;
+	text-decoration: none;
+    text-align: center;
+	width: 140px;
+    
+}
+
+.m-v a:hover {
+	background: #c48000;
+	color: white;
+	display: block;
+	margin: 2px;
+	padding: 3px;
+	text-decoration: none;
+	width: 140px;
+}
+
+.h{
+    text-align: center;;
+    font-size: 20px;
+}
+
+.img1 {
+    background-position: center;
+}
+
+.a1 {
+    color: #008e5a;
+}
+
